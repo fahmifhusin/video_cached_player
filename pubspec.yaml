@@ -4,8 +4,8 @@ version: 2.4.9+1
 homepage: https://github.com/JungJongSeok/flutter_cached_video_player
 
 environment:
-  sdk: ">=2.14.0 <3.0.0"
-  flutter: ">=2.10.0"
+  sdk: '>=3.1.0 <=3.6.2'
+#  flutter: ">=2.10.0"
 
 flutter:
   plugin:
@@ -24,7 +24,7 @@ dependencies:
     sdk: flutter
   html: ^0.15.0
   video_player: ^2.4.9
-  video_player_android: ^2.3.9
+  video_player_android: ^2.4.12
   video_player_avfoundation: ^2.2.17
   video_player_platform_interface: ^5.1.4
   plugin_platform_interface: ^2.1.3
