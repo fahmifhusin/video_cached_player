@@ -28,7 +28,7 @@ apply plugin: 'com.android.library'
 
 android {
     namespace "com.loco.video_cached_player"
-    compileSdkVersion 24
+    compileSdkVersion 34
 
     defaultConfig {
         minSdkVersion 24
