@@ -50,6 +50,7 @@ class CachedVideoPlayerValue extends VideoPlayerValue {
     this.playbackSpeed = 1.0,
     this.rotationCorrection = 0,
     this.errorDescription,
+    this.isCompleted = false,
   }) : super(
           duration: duration,
           size: size,
@@ -65,6 +66,7 @@ class CachedVideoPlayerValue extends VideoPlayerValue {
           playbackSpeed: playbackSpeed,
           rotationCorrection: rotationCorrection,
           errorDescription: errorDescription,
+          isCompleted: isCompleted,
         );
 
   /// Returns an instance for a video that hasn't been loaded.
@@ -86,6 +88,8 @@ class CachedVideoPlayerValue extends VideoPlayerValue {
   ///
   /// The duration is [Duration.zero] if the video hasn't been initialized.
   final Duration duration;
+
+  final bool isCompleted;
 
   /// The current playback position.
   final Duration position;
@@ -172,6 +176,7 @@ class CachedVideoPlayerValue extends VideoPlayerValue {
     double? playbackSpeed,
     int? rotationCorrection,
     String? errorDescription = _defaultErrorDescription,
+    bool? isCompleted,
   }) {
     return CachedVideoPlayerValue(
       duration: duration ?? this.duration,
@@ -190,6 +195,7 @@ class CachedVideoPlayerValue extends VideoPlayerValue {
       errorDescription: errorDescription != _defaultErrorDescription
           ? errorDescription
           : this.errorDescription,
+      isCompleted: this.isCompleted,
     );
   }
 
@@ -208,7 +214,8 @@ class CachedVideoPlayerValue extends VideoPlayerValue {
         'isBuffering: $isBuffering, '
         'volume: $volume, '
         'playbackSpeed: $playbackSpeed, '
-        'errorDescription: $errorDescription)';
+        'errorDescription: $errorDescription,'
+        'isCompleted: $isCompleted)';
   }
 }
 
